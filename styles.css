@@ -1,0 +1,193 @@
+:root {
+    --primary-light: #ddd;
+    --primary-dark: #222831;
+    --secondary-dark: #393e46;
+    --secondary-dark-hover: #4a4f57;
+    --header: #111a20;
+    --primary-yellow: rgba(255, 255, 0, 0.814);
+}
+
+html {
+    /* footer support */
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    background-color: var(--primary-dark);
+    color: var(--primary-light);
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    /* footer support */
+    margin-bottom: 100px;
+}
+
+button {
+    border: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    outline: none;
+}
+
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: center;
+    bottom: 0;
+    left: 0;
+    background-color: var(--header);
+}
+
+.title {
+    font-size: 32px;
+    color: #fbe5ba;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* CONTAINER */
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.scoreboard {
+    margin-bottom: 15px;
+}
+
+.round-info {
+    font-size: 32px;
+}
+
+.round-winner {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.btn {
+    border-radius: 10px;
+    background-color: var(--secondary-dark);
+}
+
+.btn-player:hover {
+    background-color: var(--secondary-dark-hover);
+}
+
+.active,
+.active:hover {
+    background-color: var(--primary-yellow);
+}
+
+
+.btn-player,
+.btn-computer {
+    width: 160px;
+    height: 160px;
+}
+
+.btn-computer {
+    cursor: default;
+}
+
+.player-choice {
+    font-size: 80px;
+    transform: rotate3d(-1, 1, 0, -180deg);
+}
+
+
+.computer-choice {
+    font-size: 80px;
+    margin-bottom: 10px;
+    transform: rotate(-90deg);
+}
+
+.btn-restart {
+    display: none;
+    padding: 10px 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 20%;
+    font-weight: bold;
+}
+
+.btn-restart:hover {
+    background-color: var(--secondary-dark-hover);
+}
+
+/* FOOTER */
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    color: var(--primary-light);
+    font-size: 20px;
+    background-color: var(--header);
+    font-family: 'Roboto', sans-serif;
+}
+
+.fa-github {
+    color: var(--primary-light);
+    font-size: 24px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.fa-github:hover {
+    transform: rotate(360deg) scale(1.2);
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 550px) {
+    .title {
+        font-size: 26px;
+    }
+
+    .round-info {
+        font-size: 26px;
+    }
+
+    .buttons {
+        gap: 10px;
+    }
+
+    .player-buttons, .computer-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .btn-player,
+    .btn-computer {
+        width: 100px;
+        height: 100px;
+    }
+
+    .player-choice,
+    .computer-choice {
+        font-size: 50px;
+    }
+
+    .btn-restart{
+        width: 50%;
+    }
+}
